@@ -1,1 +1,8 @@
 /* CSS declarations go here */
+p.selected {
+    background: yellow;
+}
+
+.snippet-item:hover {
+    cursor: default;
+}

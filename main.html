@@ -1,0 +1,20 @@
+<template name="mainLayout">
+  <head>
+    <title>blurbs</title>
+  </head>
+
+  <body>
+    {{> loginButtons}}
+    <a href="/"><h2>Reboiler</h2></a>
+
+    {{> yield }}
+
+    <footer>
+      <a href="/about">About</a>
+    </footer>
+  </body>
+</template>
+
+<template name="about">
+  <p>You have just found the easiest way to manage all of your snippets of text and create amazing reports.</p>
+</template>

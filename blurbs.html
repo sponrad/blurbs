@@ -1,20 +1,47 @@
-<head>
-  <title>blurbs</title>
-</head>
+<template name="home">
+  <button id="snippets-button">Snippets</button>
+  <button id="reports-button">Reports</button>
+  
+  {{#if snippetMode}}
+  {{> snippets}}
+  {{/if}}
+  
+  {{#if reportMode}}
+  {{> reports }}
+  {{/if}}
 
-<body>
-  {{> loginButtons}}
-
-  <h1>Blurbs</h1>
-
-  {{> hello}}
-</body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+  <div style="clear: both"></div>
 </template>
 
-<template name="landing">
-  <h1>The home template</h1>
+<template name="snippets">
+  <div id="snippet-container">
+    <h3>Edit Snippet</h3>
+    {{#if selectedSnippet}}
+    {{#if selectedSnippet.title}}
+    <p id="snippet-title">{{selectedSnippet.title}}</p>
+    {{else}}
+    <p id="snippet-title">Snippet Title</p>
+    {{/if}}
+    <div id="snippet-content" contenteditable="true">      
+      {{selectedSnippet.content}}
+    </div>
+    {{else}}
+    <div id="snippet-content">
+    </div>
+    Select a snippet to start editing
+    {{/if}}
+
+    <h3>Snippets</h3>
+    {{#each snippetsList}}
+    <p class="snippet-item" id="{{_id}}">{{content}}</p>
+    {{/each}}
+  </div>
 </template>
+
+<template name="reports">
+  <div id="report-container">
+    Reports
+  </div>
+</template>
+
+
