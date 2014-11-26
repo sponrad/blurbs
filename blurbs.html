@@ -15,32 +15,39 @@
 
 <template name="snippets">
   <div id="snippet-container">
-    <h3>Edit Snippet</h3>
-    {{#if selectedSnippet}}
-    {{#if selectedSnippet.title}}
-    <p id="snippet-title">{{selectedSnippet.title}}</p>
-    {{else}}
-    <p id="snippet-title">Snippet Title</p>
-    {{/if}}
-    <div id="snippet-content" contenteditable="true">      
-      {{selectedSnippet.content}}
-    </div>
-    {{else}}
-    <div id="snippet-content">
-    </div>
-    Select a snippet to start editing
-    {{/if}}
 
-    <h3>Snippets</h3>
-    {{#each snippetsList}}
-    <p class="snippet-item" id="{{_id}}">{{content}}</p>
-    {{/each}}
+    <div id="snippet-list-container">
+      <h3>Snippets</h3>
+      {{#each snippetsList}}
+      <p class="snippet-item" id="{{_id}}">{{content}}</p>
+      {{/each}}
+    </div>
+
+    <div id="snippet-edit-container">
+      <h3>Edit Snippet <button id="save-button" hidden>Save</button></h3>
+      {{#if selectedSnippet}}
+      {{#if selectedSnippet.title}}
+      <p id="snippet-title">{{selectedSnippet.title}}</p>
+      {{else}}
+      <p id="snippet-title">Snippet Title</p>
+      {{/if}}
+      <div id="snippet-content" contenteditable='plaintext-only'>      
+	{{selectedSnippet.content}}
+      </div>
+      {{else}}
+      <div id="snippet-content">
+      </div>
+      Select a snippet to start editing
+      {{/if}}
+    </div>
+
   </div>
 </template>
 
 <template name="reports">
   <div id="report-container">
-    Reports
+    <h3>Reports</h3>
+    <p>add List Reports | Browse Snippets | Snippets Order | Output panes</p>
   </div>
 </template>
 

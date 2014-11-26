@@ -1,0 +1,48 @@
+@lightblue: #abddff;
+
+html, body, p, button {
+  font-size: 16px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+p.selected {
+  background: @lightblue;
+}
+
+.snippet-item:hover {
+  cursor: default;
+}
+
+button {
+  background-color: #9accdd;
+  border: none;
+  padding: 10px;
+  cursor: default;
+}
+button:hover {
+  background-color: @lightblue;
+}
+/****** snippet mode ******/
+
+#snippet-edit-container{
+  display: block;
+  float: left;
+  width: calc(100%-550px);
+}
+
+#snippet-list-container{
+  display: block;
+  float:left;
+  width: 500px;
+}
+
+.snippet-item{
+  display: block;
+}
+
+#snippet-content{
+  max-width: calc(100%-550px);
+}
+
+/****** report mode ******/
+

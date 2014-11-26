@@ -22,11 +22,20 @@ if (Meteor.isClient) {
   });
 
   Template.snippets.created = function() {
+    Mousetrap.bind('del', function(){ 
+      Snippets.remove( Session.get("selectedSnippet") );
+      Session.set("selectedSnippet", null);
+    });
+  }
+
+  Template.snippets.rendered = function(){
+    $(".snippet-item#"+Session.get("selectedSnippet") ).addClass("selected");    
   }
 
   Template.snippets.helpers({
     snippetsList: function(){
       return Snippets.find({user: Meteor.userId()});
+      //      return Snippets.find({});
     },
     selectedSnippet: function(){
       return Snippets.findOne( Session.get("selectedSnippet") );
@@ -39,10 +48,14 @@ if (Meteor.isClient) {
       $("p.selected").removeClass("selected");
       $(event.target).addClass("selected");
     },
-    "change #snippet-content": function (event, template){
-      console.log("change fired");
-      content = $("#snippet-content").html();
-      Snippets.update(Session.get("selectedSnippet"), {content: content, user: Meteor.userId()});
+    "click #snippet-content": function (){
+      $("#save-button").show();
+    },
+    "click #save-button": function(){
+      content = $("#snippet-content").text();
+      console.log(content);
+      Snippets.update( Session.get("selectedSnippet"), {$set: {content: content }} );
+      $("#save-button").hide();
     }
   });
 
