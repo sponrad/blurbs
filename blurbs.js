@@ -30,12 +30,14 @@ if (Meteor.isClient) {
 
   Template.snippets.rendered = function(){
     $(".snippet-item#"+Session.get("selectedSnippet") ).addClass("selected");    
+
+    $('#snippet-content').summernote();
   }
 
   Template.snippets.helpers({
     snippetsList: function(){
       return Snippets.find({user: Meteor.userId()});
-      //      return Snippets.find({});
+      //return Snippets.find({});
     },
     selectedSnippet: function(){
       return Snippets.findOne( Session.get("selectedSnippet") );

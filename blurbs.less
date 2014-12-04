@@ -1,47 +1,46 @@
 @lightblue: #abddff;
 
 html, body, p, button {
-  font-size: 16px;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 p.selected {
-  background: @lightblue;
+    background: @lightblue;
 }
 
 .snippet-item:hover {
-  cursor: default;
+    cursor: default;
 }
 
 button {
-  background-color: #9accdd;
-  border: none;
-  padding: 10px;
-  cursor: default;
+    background-color: #9accdd;
+    border: none;
+    padding: 10px;
+    cursor: default;
 }
 button:hover {
-  background-color: @lightblue;
+    background-color: @lightblue;
 }
 /****** snippet mode ******/
 
 #snippet-edit-container{
-  display: block;
-  float: left;
-  width: calc(100%-550px);
+    display: block;
+    float: left;
+    max-width: ~"calc(100% - 540px)";
 }
 
 #snippet-list-container{
-  display: block;
-  float:left;
-  width: 500px;
+    display: block;
+    float:left;
+    width: 500px;
 }
 
 .snippet-item{
-  display: block;
+    display: block;
 }
 
 #snippet-content{
-  max-width: calc(100%-550px);
 }
 
 /****** report mode ******/

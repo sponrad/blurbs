@@ -8,8 +8,8 @@ autopublish
 insecure
 accounts-ui
 iron:router
-bootstrap
 mizzao:bootstrap-3
 accounts-password
 less
+hckrs:summernote
 

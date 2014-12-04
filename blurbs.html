@@ -31,9 +31,8 @@
       {{else}}
       <p id="snippet-title">Snippet Title</p>
       {{/if}}
-      <div id="snippet-content" contenteditable='plaintext-only'>      
-	{{selectedSnippet.content}}
-      </div>
+      <div id="snippet-content">{{{selectedSnippet.content}}}</div>
+      {{summernote}}
       {{else}}
       <div id="snippet-content">
       </div>

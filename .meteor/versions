@@ -10,9 +10,9 @@ binary-heap@1.0.1
 blaze-tools@1.0.1
 blaze@2.0.3
 boilerplate-generator@1.0.1
-bootstrap@1.0.1
 callback-hook@1.0.1
 check@1.0.2
+chrismbeckett:fontawesome4@4.2.1
 ctl-helper@1.0.4
 ctl@1.0.2
 ddp@1.0.11
@@ -22,6 +22,7 @@ email@1.0.4
 fastclick@1.0.1
 follower-livedata@1.0.2
 geojson-utils@1.0.1
+hckrs:summernote@0.1.0
 html-tools@1.0.2
 htmljs@1.0.2
 http@1.0.8
